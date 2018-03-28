@@ -1,0 +1,8 @@
+<?php
+
+#($dbHost, $dbPort, $dbUsername, $dbPassword, "Characters"
+$dbHost = "localhost";
+$dbPort = 3306;
+$dbUsername = "mangos";
+$dbPassword = "mangos";
+
