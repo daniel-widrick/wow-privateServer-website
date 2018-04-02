@@ -1,6 +1,8 @@
 <html>
    <head>
       <link rel="stylesheet" type="text/css" href="style.css">
+		<script>var whTooltips = {colorLinks: true, iconizeLinks: true, renameLinks: true};</script>
+		<script src="//wow.zamimg.com/widgets/power.js"></script>
    </head>
    <body>
 
@@ -37,7 +39,7 @@ foreach($ranking as $rank=> $data)
 	echo "<td>". ($rank+1) ."</td>";
 	echo "<td>".$data["name"]."</td>";
 	echo "<td>".$data["level"]."</td>";
-	echo "<td>".floor($data["ilvl"])."</td>";
+	echo "<td><a href='http://bfa.wowhead.com/compare?items=".str_replace(',',':',$data["items"])."&l=".$data["level"]."'>".floor($data["ilvl"])."</a></td>";
 	echo "<td>".$data["raceDescription"]."</td>";
 	echo "<td>".$data["classDescription"]."</td>";
 	echo "<td>".$data["genderDescription"]."</td>";

@@ -55,13 +55,13 @@ class databaseCharacter extends database {
 			$sort = $order;
 		}
 
-		$query = "SELECT name, race, class, gender, level, xp, zone, ilvl from characters 
+		$query = "SELECT name, race, class, gender, level, xp, zone, ilvl,items from characters 
 left join
 (
 select
 characters.characters.guid,
-avg(mangos.item_template.ItemLevel) ilvl
-
+sum(mangos.item_template.ItemLevel)/16 ilvl,
+(select group_concat(t.item_template) from character_inventory t where t.guid = character_inventory.guid and t.bag = 0 and t.slot <= 19 group by t.guid) items
 from
 
 characters.characters
