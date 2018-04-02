@@ -61,7 +61,7 @@ left join
 select
 characters.characters.guid,
 sum(mangos.item_template.ItemLevel)/16 ilvl,
-(select group_concat(t.item_template) from character_inventory t where t.guid = character_inventory.guid and t.bag = 0 and t.slot <= 19 group by t.guid) items
+(select group_concat(t.item_template) from character_inventory t where t.guid = character_inventory.guid and t.bag = 0 and t.slot <= 18 group by t.guid) items
 from
 
 characters.characters
@@ -69,7 +69,7 @@ left join characters.character_inventory on characters.characters.guid = charact
 left join mangos.item_template on mangos.item_template.entry = characters.character_inventory.item_template
 
 where 
-characters.character_inventory.bag = 0 and slot <=19
+characters.character_inventory.bag = 0 and slot <=18
 
 group by characters.characters.guid
 
